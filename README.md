@@ -99,7 +99,7 @@ def objective(x, env):
 
 In the competition, we provide the instance, and participants are expected to submit the solution that they believe
 gives the best (highest) objective for this instance. An example solution submission is given in the
-file `check_solution_surrogate.py`. The file submitted on the website should simply be a text file that contains the
+file `check_solution_surrogate.py`. The file submitted on the website should simply be a `.out` file that contains the
 numbers of the solution on separate lines, e.g.:
 
 ```
