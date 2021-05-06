@@ -1,0 +1,77 @@
+import json
+import numpy as np
+import os
+import pprint
+
+from env import Env
+from env_rl import EnvRL
+
+
+def score_rl_solution(submission_filepath='example_output_rl.json'):
+    test_data_instance_path = 'data/valid/instances'
+    test_data_adj_path = 'data/valid/adjs'
+
+    f = open(submission_filepath)
+    submission = json.load(f)
+    pprint.pprint(submission)
+
+    scores = []
+    n_feas_sols = 0
+    for instance_name in submission.keys():
+        x_path = os.path.join(test_data_instance_path, instance_name + '.csv')
+        adj_path = os.path.join(test_data_adj_path, 'adj-' + instance_name + '.csv')
+        seed = submission[instance_name]['seed']
+        env = Env(from_file=True, seed=seed, x_path=x_path, adj_path=adj_path)
+
+        instance = submission[instance_name]
+        for tour_name in instance['tours'].keys():
+            sol = instance['tours'][tour_name]
+            _, rewards, pen, feas = env.check_solution(sol)
+            assert tour_name == env.name, f'submission tour name {tour_name} is in wrong simulation order.'
+            score = rewards + pen
+            n_feas_sols += float(feas)
+            scores.append(score)
+
+    avg_score = np.mean(scores)
+
+    return np.round(avg_score, 5)
+
+
+def score_rl_solution_adaptive(submission_filepath='example_output_rl.json'):
+    test_data_instance_path = 'data/valid/instances'
+    test_data_adj_path = 'data/valid/adjs'
+
+    f = open(submission_filepath)
+    submission = json.load(f)
+    pprint.pprint(submission)
+
+    scores = []
+    n_feas_sols = 0
+    for instance_name in submission.keys():
+        x_path = os.path.join(test_data_instance_path, instance_name + '.csv')
+        adj_path = os.path.join(test_data_adj_path, 'adj-' + instance_name + '.csv')
+        seed = submission[instance_name]['seed']
+        env = EnvRL(from_file=True, seed=seed, x_path=x_path, adj_path=adj_path)
+
+        instance = submission[instance_name]
+        for tour_name in instance['tours'].keys():
+            sol = instance['tours'][tour_name]
+            for node in sol[1:]:
+                env.step(node)
+            rewards = env.get_collected_rewards()
+            pen = env.get_incurred_penalties()
+            feas = env.get_feasibility()
+
+            assert tour_name == env.get_sim_name(), f'submission tour name {tour_name} is in the wrong simulation order.'
+            score = rewards + pen
+            n_feas_sols += float(feas)
+            scores.append(score)
+            env.reset()
+
+    avg_score = np.mean(scores)
+
+    return np.round(avg_score, 5)
+
+
+if __name__ == '__main__':
+    print(f'Your submission scored {score_rl_solution():.05f}')
