@@ -110,6 +110,7 @@ numbers of the solution on separate lines, e.g.:
 4
 5
 ```
+Example output files can be found in the folder `baseline_surrogate\`.
 
 ### Using continuous solvers: example with Bayesian optimization with Gaussian processes
 
