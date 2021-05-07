@@ -484,7 +484,7 @@ python check_solution_rl.py
 11. In the **test** phase, the **top 5 teams** of each track will be invited to submit a new submission file and codes for test instances.
 12. Teams that make it to the test phase will have **1 week** to submit their **codes** and **submission files** to the website.
 13. The deadline for the test phase (only for selected teams) is on the **12th of July, 2021** (AoE).
-14. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** anond the **submission scores**.
+14. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and **submission scores**.
 15. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
 16. **Winners** will be contacted on the **9th of August, 2021**.
 17. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
