@@ -6,10 +6,12 @@ import pprint
 from env import Env
 from env_rl import EnvRL
 
+from pathlib import Path
 
 def score_rl_solution(submission_filepath='example_output_rl.json'):
-    test_data_instance_path = 'data/valid/instances'
-    test_data_adj_path = 'data/valid/adjs'
+    base_path = Path(__file__).parent.absolute()
+    test_data_instance_path = base_path.joinpath('data/valid/instances')
+    test_data_adj_path = base_path.joinpath('data/valid/adjs')
 
     f = open(submission_filepath)
     submission = json.load(f)
@@ -38,8 +40,9 @@ def score_rl_solution(submission_filepath='example_output_rl.json'):
 
 
 def score_rl_solution_adaptive(submission_filepath='example_output_rl.json'):
-    test_data_instance_path = 'data/valid/instances'
-    test_data_adj_path = 'data/valid/adjs'
+    base_path = Path(__file__).parent.absolute()
+    test_data_instance_path = base_path.joinpath('data/valid/instances')
+    test_data_adj_path = base_path.joinpath('data/valid/adjs')
 
     f = open(submission_filepath)
     submission = json.load(f)
