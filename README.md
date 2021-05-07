@@ -198,7 +198,7 @@ In the Reinforcement Learning (RL) track, we are interested in a **policy**.
 **Policy**: A policy in the TD-OPSWTW selects the next node to be visited given a sequence of previously visited nodes.
 Note that to cope with the stochastic travel times, a **policy must be adaptive**. Therefore, a policy needs to
 take as input the instance information to construct tours dynamically that respect the time windows of nodes and the total
-tour time allowed for the instance. Note that the goal of the competiton is learn how to act when there is uncertainty in the travel times. 
+tour time allowed for the instance. Note that the goal of the competition is learn how to act when there is uncertainty in the travel times. 
 If you submit a solution that only uses all sampled travel times as input each time a simulation is started (i.e. you transform the problem in a deterministic one) this **will not** be considered adaptive. 
 Note that unlike Track 1, we are interested in general policies applicable to any
 instance of the TD-OPSWTW in the training distribution. The following figure shows an example of a next node visitation
@@ -346,7 +346,7 @@ In the above example the first row of ``inst`` represents:
 
 We provide a baseline to the RL competition based
 on ['Neural Combinatorial Optimization with Reinforcement Learning, Irwan Bello, Hieu Pham, Quoc V. Le, Mohammad Norouzi, Samy Bengio'](https://arxiv.org/abs/1611.09940 "cool paper")
-. Note that the above approach is **not** adaptive and will not perform well in the given task. This baseline is just a
+. Note that the above approach does not adapt to the travel times observed in a given Monte Carlo simulation and will not perform well in the given task. This baseline is just a
 reference as to how RL can be used. Moreover, it only uses the coordinates and prizes to make decisions on complete
 tours.
 
