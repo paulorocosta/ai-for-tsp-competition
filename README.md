@@ -467,11 +467,11 @@ python check_solution_rl.py
 
 ## General Competition Rules
 
-1. Participants need to form teams (up to 5 participants) to be able to participate. 
+1. Participants need to form **teams** (up to 5 participants) to be able to participate. 
 2. If a single person wants to participate, a team of one person must be formed.
-3. Participants must register their teams via the website. 
+3. Participants must **register** their teams via the website. 
 4. Submissions must be made through the website.  
-5. Submissions must contain the source code of your submission (``.zip``) and the relevant output files: ``.out`` (track 1), ``.json`` (track 2).
+5. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2).
 6. The competition is composed of two phases: **validation** and **test**. 
 7. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
 8. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
@@ -481,7 +481,7 @@ python check_solution_rl.py
 12. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and the **submission scores**.
 13. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
 14. **Winners** will be contacted on the **9th of August, 2021**.
-15. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) DSO workshop @IJCAI-2021.
+15. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
  
 
 
