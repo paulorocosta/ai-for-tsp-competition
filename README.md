@@ -199,7 +199,7 @@ In the Reinforcement Learning (RL) track, we are interested in a **policy**.
 Note that to cope with the stochastic travel times, a **policy must be adaptive**. Therefore, a policy needs to
 take as input the instance information to construct tours dynamically that respect the time windows of nodes and the total
 tour time allowed for the instance. Note that the goal of the competiton is learn how to act when there is uncertainty in the travel times. 
-If you submit a solution that only uses all sampled travel times as input each time a simulation is started this **will not** be considered adaptive. 
+If you submit a solution that only uses all sampled travel times as input each time a simulation is started (i.e. you transform the problem in a deterministic one) this **will not** be considered adaptive. 
 Note that unlike Track 1, we are interested in general policies applicable to any
 instance of the TD-OPSWTW in the training distribution. The following figure shows an example of a next node visitation
 decision that has to be made by a policy visiting ``n=6`` nodes.
