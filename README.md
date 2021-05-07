@@ -18,6 +18,8 @@ serve the customer. Lastly, the salesman must not violate a total travel time bu
 network. The goal is to collect the most prizes in the network while respecting the time windows and the total travel
 time of a tour allowed to the salesman.
 
+For ease of discussion, we have created a Slack chat workspace. You can join us at https://join.slack.com/t/aifortspcompe-8vg8608/shared_invite/zt-pzzgb9aa-92uS1~OBVog9uY8AFEfHhg if you have any questions, or use this github page for issues.
+
 ## Dependencies
 
 * Python=3.8 (should be OK with v >= 3.6)
