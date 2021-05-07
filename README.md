@@ -243,7 +243,7 @@ time the environment is `reset()`, new travel times are drawn at random (new Mon
 simulation, i.e., each randomness, a `tour000`. During the evaluation, you will be given instances, seeds, and a number
 of tours to generate for each instance file.
 
-Note that the RL environment's default behaviour is ``adaptive``. This means that it expects a node as input of each
+The RL environment's default behaviour is ``adaptive``. This means that it expects a node as input of each
 ``step()`` call. However, we allow for the environment to be called in the same manner as Track 1 by
 setting ``adaptive=False`` and calling `check_solution()` as before.
 
@@ -259,7 +259,7 @@ print(env.n_nodes)
 ```
 
 Note that when the environment is initiated, the first simulation is already started, i.e., calling ``reset()`` will
-create a second simulation,i.e., ``tour002``. You are not allowed to use ``noisy_adj`` as input to your proposed solution as this would turn the problem into a deterministic one.  
+create a second simulation, i.e., ``tour002``. You are not allowed to use ``noisy_adj`` as input to your proposed solution as this would turn the problem into a deterministic one.  
 
 #### Taking a step in the environment
 
