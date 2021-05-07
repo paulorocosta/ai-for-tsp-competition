@@ -471,17 +471,18 @@ python check_solution_rl.py
 2. If a single person wants to participate, a team of one person must be formed.
 3. Participants must **register** their teams via the website. 
 4. Submissions must be made through the website.  
-5. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2).
-6. The competition is composed of two phases: **validation** and **test**. 
-7. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
-8. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
-9. In the **test** phase, the **top 4 teams** will be invited to submit a new submission file and codes for test instances.
-10. Teams that make it to the test phase will have **1 week** to submit their **codes** and **submission files** to the website.
-11. The deadline for the test phase (only for selected teams) is on the **12th of July, 2021** (AoE).
-12. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and the **submission scores**.
-13. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
-14. **Winners** will be contacted on the **9th of August, 2021**.
-15. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
+5. Submissions for track 1 must make use of a surrogate model in one way or another, and submissions for track 2 must make use of reinforcement learning in one way or another.
+6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2). The source code will not be made public without the your consent, but will be used to verify the method used to obtain the solution.
+7. The competition is composed of two phases: **validation** and **test**. 
+8. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
+9. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
+10. In the **test** phase, the **top 4 teams** will be invited to submit a new submission file and codes for test instances.
+11. Teams that make it to the test phase will have **1 week** to submit their **codes** and **submission files** to the website.
+12. The deadline for the test phase (only for selected teams) is on the **12th of July, 2021** (AoE).
+13. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and the **submission scores**.
+14. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
+15. **Winners** will be contacted on the **9th of August, 2021**.
+16. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
  
 
 
