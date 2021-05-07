@@ -210,7 +210,7 @@ In the figure, a policy has visited nodes 1 (depot) and 6 with travel time ``t_{
 At this current decision epoch, the policy has to choose the next node to visit. The prizes ``p_i`` and time window
 bounds  ``[l_i, u_i]`` are known and given in the instance, as well as the maximum allowed tour time `T`. The decision
 should consider the prizes of each node, the time windows, and the total remaining travel time when selecting the next
-node (in this case, node 3).
+node (in this case, node 3). Note that your policy can utilise the information of the travel time ``t_{1,6}`` for the next visitation decision. 
 
 To achieve a feasible solution, a policy needs to visit nodes respecting the upper bounds of the time windows, i.e., it
 can violate the lower bounds and arrive early without penalties and the maximum tour times. When the policy decides to
