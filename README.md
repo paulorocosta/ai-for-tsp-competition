@@ -1,4 +1,6 @@
-# AI for TSP Competititon
+# AI for TSP Competition
+
+https://www.tspcompetition.com/
 
 In a Travelling Salesman Problem (TSP), the goal is to find the tour with the smallest cost visiting all locations (
 customers) in a network exactly once.
