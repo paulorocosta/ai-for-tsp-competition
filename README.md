@@ -198,8 +198,8 @@ In the Reinforcement Learning (RL) track, we are interested in a **policy**.
 **Policy**: A policy in the TD-OPSWTW selects the next node to be visited given a sequence of previously visited nodes.
 To cope with the stochastic travel times, a **policy must be adaptive**. Therefore, a policy needs to
 take as input the instance information to construct tours dynamically that respect the time windows of nodes and the total
-tour time allowed for the instance. Note that the goal of the competition is learn how to act when there is uncertainty in the travel times. 
-If you transform the problem in a deterministic one every time a new simulation is started this **will not** be considered adaptive. Thus, the proposed solutions should take the instance features as input (including the maximum travel times between locations) and can also use the information that is revealed to the policy as you build the tour node-by-node.
+tour time allowed for the instance. Note that the competition's goal is to learn how to act when there is uncertainty in the travel times. 
+Suppose you transform the problem into a deterministic one every time a new simulation is started (by having complete information of the sampled travel times). In that case, this **will not** be considered adaptive. Thus, the proposed solutions should take the instance features as input (including the maximum travel times between locations) and use the information revealed to the policy as you build the tour node-by-node.
 Note that unlike Track 1, we are interested in general policies applicable to any
 instance of the TD-OPSWTW in the training distribution. The following figure shows an example of a next node visitation
 decision that has to be made by a policy visiting ``n=6`` nodes.
@@ -358,7 +358,7 @@ tours.
 
 If you would like a reference to an adaptive method,
 consider  ['Attention, Learn to Solve Routing Problems!, Wouter Kool, Herke van Hoof, Max Welling'](https://arxiv.org/abs/1803.08475 " another cool paper")
-.
+- (Stochastic PCTSP).
 
 ## Data
 
