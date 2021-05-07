@@ -212,8 +212,7 @@ bounds  ``[l_i, u_i]`` are known and given in the instance, as well as the maxim
 should consider the prizes of each node, the time windows, and the total remaining travel time when selecting the next
 node (in this case, node 3). Note that your policy can utilise the information of the travel time ``t_{1,6}`` for the next visitation decision. 
 
-To achieve a feasible solution, a policy needs to visit nodes respecting the upper bounds of the time windows, i.e., it
-can violate the lower bounds and arrive early without penalties and the maximum tour times. When the policy decides to
+To achieve a feasible solution, a policy needs to visit nodes respecting the upper bounds of the time windows, and the maximum tour times. When the policy decides to
 arrive early at a node, the travel time gets shifted to the beginning of the time window. For example, if the travel
 time between the depot (node 1) and node 6 is lower than ``l_6``, the salesman has to wait until
 ``l_6`` to depart from that node. This information becomes available as soon as the salesman arrives at node 6. Lastly,
