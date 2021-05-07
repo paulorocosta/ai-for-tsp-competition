@@ -201,7 +201,8 @@ In the Reinforcement Learning (RL) track, we are interested in a **policy**.
 To cope with the stochastic travel times, a **policy must be adaptive**. Therefore, a policy needs to
 take as input the instance information to construct tours dynamically that respect the time windows of nodes and the total
 tour time allowed for the instance. Note that the competition's goal is to learn how to act when there is uncertainty in the travel times. 
-Suppose you transform the problem into a deterministic one every time a new simulation is started (by having complete information of the sampled travel times). In that case, this **will not** be considered adaptive. Thus, the proposed solutions should take the instance features as input (including the maximum travel times between locations) and use the information revealed to the policy as you build the tour node-by-node.
+Suppose you transform the problem into a deterministic one every time a new simulation is started (by having complete information of the sampled travel times). In that case, this **will not** be considered adaptive.
+Thus, the proposed solutions should take the instance features as input (including the maximum travel times between locations) and use the information revealed to the policy as you build the tour node-by-node.
 Note that unlike Track 1, we are interested in general policies applicable to any
 instance of the TD-OPSWTW in the training distribution. The following figure shows an example of a next node visitation
 decision that has to be made by a policy visiting ``n=6`` nodes.
@@ -258,7 +259,7 @@ print(env.n_nodes)
 ```
 
 Note that when the environment is initiated, the first simulation is already started, i.e., calling ``reset()`` will
-create a second simulation,i.e., ``tour002``.
+create a second simulation,i.e., ``tour002``. You are not allowed to use ``noisy_adj`` as input to your proposed solution as this would turn the problem into a deterministic one.  
 
 #### Taking a step in the environment
 
@@ -476,16 +477,17 @@ python check_solution_rl.py
 4. Submissions must be made through the website.  
 5. Submissions for track 1 must make use of a surrogate model in one way or another, and submissions for track 2 must make use of reinforcement learning in one way or another.
 6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
-7. The competition is composed of two phases: **validation** and **test**. 
-8. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
-9. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
-10. In the **test** phase, the **top 5 teams** of each track will be invited to submit a new submission file and codes for test instances.
-11. Teams that make it to the test phase will have **1 week** to submit their **codes** and **submission files** to the website.
-12. The deadline for the test phase (only for selected teams) is on the **12th of July, 2021** (AoE).
-13. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and the **submission scores**.
-14. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
-15. **Winners** will be contacted on the **9th of August, 2021**.
-16. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
+7. Submissions **must not** make use of the environments' attribute ``noisy_adj``  as an input. This defeats the purpose of the competition. Any submission that uses the sampled travel times will be considered **invalid**. Note that for the RL case you can use the sampled travel times **after** they are revealed when constructing a tour. 
+8. The competition is composed of two phases: **validation** and **test**. 
+9. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
+10. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
+11. In the **test** phase, the **top 5 teams** of each track will be invited to submit a new submission file and codes for test instances.
+12. Teams that make it to the test phase will have **1 week** to submit their **codes** and **submission files** to the website.
+13. The deadline for the test phase (only for selected teams) is on the **12th of July, 2021** (AoE).
+14. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** anond the **submission scores**.
+15. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. 
+16. **Winners** will be contacted on the **9th of August, 2021**.
+17. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
  
 
 
