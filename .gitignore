@@ -1,0 +1,4 @@
+/data/valid/**/*.csv
+
+__pycache__/
+
