@@ -357,7 +357,7 @@ tours.
 
 If you would like a reference to an adaptive method,
 consider  ['Attention, Learn to Solve Routing Problems!, Wouter Kool, Herke van Hoof, Max Welling'](https://arxiv.org/abs/1803.08475 " another cool paper")
-- (Stochastic PCTSP).
+(Stochastic PCTSP).
 
 ## Data
 
