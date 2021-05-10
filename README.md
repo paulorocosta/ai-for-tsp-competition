@@ -41,7 +41,7 @@ Please check ``environment.yml``
 3. Participants must **register** their teams via the website. 
 4. Submissions must be made through the website.  
 5. Submissions for track 1 must make use of a surrogate model in one way or another, and submissions for track 2 must make use of reinforcement learning in one way or another.
-6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
+6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1),  and a ``.zip`` file containing **a single** ``.json`` file (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
 7. Submissions **must not** make use of the environments' attribute ``noisy_adj``  as an input. This defeats the purpose of the competition. Any submission that uses the sampled travel times will be considered **invalid**. Note that for the RL case you can use the sampled travel times **after** they are revealed when constructing a tour. 
 8. The competition is composed of two phases: **validation** and **test**. 
 9. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
