@@ -41,7 +41,7 @@ Please check ``environment.yml``
 3. Participants must **register** their teams via the website. 
 4. Submissions must be made through the website.  
 5. Submissions for track 1 must make use of a surrogate model in one way or another, and submissions for track 2 must make use of reinforcement learning in one way or another.
-6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1), ``.json`` (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
+6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1),  and a ``.zip`` file containing **a single** ``.json`` file (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
 7. Submissions **must not** make use of the environments' attribute ``noisy_adj``  as an input. This defeats the purpose of the competition. Any submission that uses the sampled travel times will be considered **invalid**. Note that for the RL case you can use the sampled travel times **after** they are revealed when constructing a tour. 
 8. The competition is composed of two phases: **validation** and **test**. 
 9. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
@@ -422,7 +422,7 @@ revealed to the qualifying participants.
 ## Submission
 
 A submission file example can be found in the ``baseline_rl`` folder, named ``example_output_rl.json``. The submission
-file is a .json file containing the instance name, followed by the number of nodes, seed, and the 100 simulated tours.
+file is a ``.json`` file containing the instance name, followed by the number of nodes, seed, and the 100 simulated tours.
 Thus ``tour001`` until ``tour100``.
 
  ```json
@@ -476,7 +476,7 @@ Thus ``tour001`` until ``tour100``.
 For the validation data, all seeds are the same ``seed: 12345``. Each tour name must be followed by an array of integers
 of size ``n+1``. For a solution to be considered valid, the depot ``node: 1`` must appear twice in every array.
 Moreover, the depot **must** appear in the first position. If the solutions do not comply with these standards, the
-submission will be invalid.
+submission will be invalid. When submitting to the website you must ** a single zip** containing a **single** ``.json`` file. 
 
 ## Scoring Submissions
 
