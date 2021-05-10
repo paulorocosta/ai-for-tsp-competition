@@ -476,7 +476,7 @@ Thus ``tour001`` until ``tour100``.
 For the validation data, all seeds are the same ``seed: 12345``. Each tour name must be followed by an array of integers
 of size ``n+1``. For a solution to be considered valid, the depot ``node: 1`` must appear twice in every array.
 Moreover, the depot **must** appear in the first position. If the solutions do not comply with these standards, the
-submission will be invalid. When submitting to the website you must ** a single zip** containing a **single** ``.json`` file. 
+submission will be invalid. When submitting to the website you must upload **a single zip** file containing a **single** ``.json`` file. 
 
 ## Scoring Submissions
 
