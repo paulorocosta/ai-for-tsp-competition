@@ -15,7 +15,7 @@ def score_rl_solution(submission_filepath='example_output_rl.json'):
 
     f = open(submission_filepath)
     submission = json.load(f)
-    pprint.pprint(submission)
+    #pprint.pprint(submission)
 
     scores = []
     n_feas_sols = 0
@@ -46,7 +46,7 @@ def score_rl_solution_adaptive(submission_filepath='example_output_rl.json'):
 
     f = open(submission_filepath)
     submission = json.load(f)
-    pprint.pprint(submission)
+    #pprint.pprint(submission)
 
     scores = []
     n_feas_sols = 0
