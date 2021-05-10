@@ -117,10 +117,7 @@ class EnvRL(env.Env):
             self.mask[node - 1] = 1
 
     def step(self, node):
-        """
-        gets the next node and calculate the cost using the fixed time and a noise value
-        noise is uniform and the cost is obtained by product of the noise and the time matrix
-        """
+        
         if len(self.tour) >= self.n_nodes + 1:
             return None
         assert node <= self.n_nodes, f'node {node} does not exist for instance of size {self.n_nodes}'
