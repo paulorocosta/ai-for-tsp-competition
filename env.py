@@ -1,5 +1,5 @@
 import numpy as np
-
+import random
 import op_utils.instance as u_i
 import op_utils.op as u_o
 
@@ -14,6 +14,7 @@ class Env:
         self.adj = None
         self.seed = seed
         np.random.seed(self.seed)
+        random.seed(self.seed)
         self.sim_counter = 0
         self.name = None
         if from_file:
@@ -28,26 +29,13 @@ class Env:
     def get_features(self):
         return self.x, self.adj
 
-    def _make_noisy_adj(self):
-        assert self.adj is not None
-
-        n_nodes = len(self.adj)
-
-        noise = np.random.randint(1, 101, size=(n_nodes, n_nodes))
-        noise = np.round(noise / 100, 2)
-        noisy_adj = noise * self.adj
-
-        self.noisy_adj = noisy_adj.astype(np.double)
-
     def check_solution(self, sol):
 
-        assert len(sol) == len(self.x) + 1, 'len(sol) = ' + str(len(sol)) + ', len(self.x)+1 = ' + str(len(self.x) + 1)
+        assert len(sol) == len(self.x) + 1, 'len(sol) = ' + str(len(sol)) + ', n_nodes+1 = ' + str(len(self.x) + 1)
         assert len(sol) == len(set(sol)) + 1
-        self._make_noisy_adj()
         self.sim_counter += 1
         self.name = f'tour{self.sim_counter:03}'
-
-        tour_time, rewards, pen, feas = u_o.tour_check(sol, self.x, self.noisy_adj, self.maxT_pen,
+        tour_time, rewards, pen, feas = u_o.tour_check(sol, self.x, self.adj, self.maxT_pen,
                                                        self.tw_pen, self.n_nodes)
         return tour_time, rewards, pen, feas
 

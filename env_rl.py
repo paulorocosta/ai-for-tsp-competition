@@ -1,4 +1,5 @@
 import env
+import numpy as np
 import op_utils.op as u_o
 
 
@@ -46,7 +47,8 @@ class EnvRL(env.Env):
         if self.adaptive:
             pass
         else:
-            return u_o.tour_check(sol, self.x, self.noisy_adj, self.maxT_pen,
+            # this is will generate a different randomness than 'step()'
+            return u_o.tour_check(sol, self.x, self.adj, self.maxT_pen,
                                   self.tw_pen, self.n_nodes)
 
     def get_remaining_time(self):
@@ -123,7 +125,8 @@ class EnvRL(env.Env):
         assert node <= self.n_nodes, f'node {node} does not exist for instance of size {self.n_nodes}'
 
         previous_tour_time = self.tour_time
-        self.tour_time += self.noisy_adj[self.current_node - 1, node - 1]
+        self.tour_time += self.adj[self.current_node - 1, node - 1]
+        self.tour_time = np.round(np.random.randint(1, 101, size=1)[0] / 100 * self.tour_time, 2)
         self._get_rewards(node)
         self.time_t = self.tour_time - previous_tour_time
         self.current_node = node
@@ -136,7 +139,6 @@ class EnvRL(env.Env):
         self.mask = [0] * self.n_nodes
         self.tour_time = 0
         self.time_t = 0
-        self._make_noisy_adj()
         self.feas = True
         self.return_to_depot = False
         self.rewards = 0
@@ -154,6 +156,26 @@ class EnvRL(env.Env):
 
 
 if __name__ == '__main__':
-    env = EnvRL(from_file=True, x_path='data/valid/instances/instance0001.csv',
-                adj_path='data/valid/adjs/adj-instance0001.csv')
-    print(env.n_nodes)
+    from env_rl import EnvRL
+
+    env = EnvRL(5, seed=123456, adaptive=False)
+    print('name', env.name)
+    env.step(2)
+    env.step(4)
+    env.step(5)
+    env.step(1)
+    env.step(3)
+    print('tour', env.tour)
+    print('tour time', env.tour_time)
+    print(50*'-')
+    env.reset()
+    print('name', env.name)
+    env.step(2)
+    env.step(4)
+    env.step(5)
+    env.step(1)
+    env.step(3)
+    print('tour', env.tour)
+    print('tour time', env.tour_time)
+
+

@@ -80,7 +80,7 @@ def tour_check(tour, x, time_matrix, maxT_pen, tw_pen, n_nodes):
         succ = int(tour[i + 1])
 
         tour_time += time_matrix[node - 1][succ - 1]
-
+        tour_time = np.round(np.random.randint(1, 101, size=1)[0]/100 * tour_time, 2)
         if tour_time > tw_high[succ - 1]:
             feas = False
             # penalty added for each missed tw
