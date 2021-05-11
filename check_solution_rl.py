@@ -8,7 +8,7 @@ from env_rl import EnvRL
 
 from pathlib import Path
 
-def score_rl_solution(submission_filepath='example_output_rl.json'):
+def score_rl_solution(submission_filepath='example_output_rl.json', final_submission=False):
     base_path = Path(__file__).parent.absolute()
     test_data_instance_path = base_path.joinpath('data/valid/instances')
     test_data_adj_path = base_path.joinpath('data/valid/adjs')
@@ -26,6 +26,9 @@ def score_rl_solution(submission_filepath='example_output_rl.json'):
         env = Env(from_file=True, seed=seed, x_path=x_path, adj_path=adj_path)
 
         instance = submission[instance_name]
+        if final_submission:
+            n_tours = len(instance['tours'].keys())
+            assert n_tours == 100, f'each instance must have 100 tours, found {n_tours}'
         for tour_name in instance['tours'].keys():
             sol = instance['tours'][tour_name]
             _, rewards, pen, feas = env.check_solution(sol)
@@ -39,7 +42,7 @@ def score_rl_solution(submission_filepath='example_output_rl.json'):
     return np.round(avg_score, 5)
 
 
-def score_rl_solution_adaptive(submission_filepath='example_output_rl.json'):
+def score_rl_solution_adaptive(submission_filepath='example_output_rl.json', final_submission=False):
     base_path = Path(__file__).parent.absolute()
     test_data_instance_path = base_path.joinpath('data/valid/instances')
     test_data_adj_path = base_path.joinpath('data/valid/adjs')
@@ -57,6 +60,9 @@ def score_rl_solution_adaptive(submission_filepath='example_output_rl.json'):
         env = EnvRL(from_file=True, seed=seed, x_path=x_path, adj_path=adj_path)
 
         instance = submission[instance_name]
+        if final_submission:
+            n_tours = len(instance['tours'].keys())
+            assert n_tours == 100, f'each instance must have 100 tours, found {n_tours}'
         for tour_name in instance['tours'].keys():
             sol = instance['tours'][tour_name]
             for node in sol[1:]:
