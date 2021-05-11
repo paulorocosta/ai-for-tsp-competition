@@ -1,3 +1,8 @@
+# Updates
+* 11.05
+    - We are now in the tryout phase. This phase runs until the **21st of May**.
+    - We kindly ask you to report back any issues you may encounter via the issues page on this github repo or via the slack channel. 
+
 # AI for TSP Competition
 
 https://www.tspcompetition.com/
