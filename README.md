@@ -1,7 +1,8 @@
 # Updates
 * 11.05
-    - We are now in the tryout phase. This phase runs until the **21st of May**.
+    - We are now in the tryout phase. This phase runs until the **21st of May**. Please expect a few updates to the master code until then. After this date no further changes will be introduced. 
     - We kindly ask you to report back any issues you may encounter via the issues page on this github repo or via the slack channel. 
+    - We changed the way randomness is calculated in the environments. Please update your code. 
 
 # AI for TSP Competition
 
@@ -47,17 +48,16 @@ Please check ``environment.yml``
 4. Submissions must be made through the website.  
 5. Submissions for track 1 must make use of a surrogate model in one way or another, and submissions for track 2 must make use of reinforcement learning in one way or another.
 6. Submissions must contain the **source code** of your submission (``.zip``) and the **relevant output files**: ``.out`` (track 1),  and a ``.zip`` file containing **a single** ``.json`` file (track 2). The source code will not be made public without your consent, but will be used to verify the method used to obtain the solution.
-7. Submissions **must not** make use of the environments' attribute ``noisy_adj``  as an input. This defeats the purpose of the competition. Any submission that uses the sampled travel times will be considered **invalid**. Note that for the RL case you can use the sampled travel times **after** they are revealed when constructing a tour. 
-8. The competition is composed of two phases: **validation** and **test**. 
-9. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
-10. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
-11. In the **test** phase, teams will be asked to submit a new submission file and codes for test instances.
-12. For the test phase, teams will have **1 week** to submit their **codes** and **submission files** to the website.
-13. The deadline for the test phase is on the **12th of July, 2021** (AoE).
-14. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and **submission scores**.
-15. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. Please make sure your results are reproducible.
-16. **Winners** will be contacted on the **9th of August, 2021**.
-17. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
+7. The competition is composed of two phases: **validation** and **test**. 
+8. In the **validation** phase, all participants are evaluated with the same validation instance (track 1) or validation set (track 2).
+9. The final submission deadline for the validation phase is on the **5th of July, 2021**, Anywhere on Earth (AoE) time.
+10. In the **test** phase, teams will be asked to submit a new submission file and codes for test instances.
+11. For the test phase, teams will have **1 week** to submit their **codes** and **submission files** to the website.
+12. The deadline for the test phase is on the **12th of July, 2021** (AoE).
+13. The organizers will thoroughly check the codes of the teams in the test phase regarding the **solution approach** and **submission scores**.
+14. If discrepancies of more than **5%** between the results submitted and the results obtained running the code are found, the team will be disqualified. Please make sure your results are reproducible.
+15. **Winners** will be contacted on the **9th of August, 2021**.
+16. Winners will be announced publicly during the (DATA SCIENCE MEETS OPTIMISATION) **DSO workshop @IJCAI-2021 (21st of August, 2021)**.
 
 We consider **two tracks** in the competition: Surrogate-based Optimization (track 1) and Reinforcement Learning (track 2).
 
