@@ -5,10 +5,11 @@ from env_rl import EnvRL
 
 
 class BatchEnvRL:
+    base_dir = os.path.dirname(os.getcwd())
 
-    def __init__(self, n_envs, n_nodes=50, w=(20, 40, 60, 80, 100), maxT_pen=-1.0, tw_pen=-1.0, seed=None,
+    def __init__(self, n_envs, n_nodes=50, seed=None,
                  from_file=False, x_dir=None, adj_dir=None, verbose=False, adaptive=True):
-        self.n_nodes = n_nodes
+
         self.adaptive = adaptive
         self.envs = []
         if from_file:
@@ -16,21 +17,30 @@ class BatchEnvRL:
             print(f'Reading instance time matrix from {adj_dir}...')
 
             count = 0
+            n_nodes = 0
             for path_ in os.listdir(x_dir):
                 if os.path.isfile(os.path.join(x_dir, path_)):
+                    assert os.path.isfile(os.path.join(adj_dir, 'adj-'+path_))
                     count += 1
-                    self.envs.append(EnvRL(from_file=from_file, x_path=os.path.join(x_dir, path_),
-                                           adj_path=os.path.join(adj_dir, path_), adaptive=adaptive))
+                    env = EnvRL(from_file=from_file, x_path=os.path.join(x_dir, path_),
+                                           adj_path=os.path.join(adj_dir, 'adj-'+path_), adaptive=adaptive)
+                    self.envs.append(env)
+                    if env.n_nodes > n_nodes:
+                        n_nodes = env.n_nodes
                     if count >= n_envs:
                         break
 
+
             self.n_envs = count
+            #n_nodes will be the maximum number of nodes in the files
+            self.n_nodes = n_nodes
+            print(f'read {self.n_envs} files, with a max number of nodes: {self.n_nodes}')
         else:
             # print('Generating instances on the fly...')
             for i in range(n_envs):
-                self.envs.append(EnvRL(n_nodes=n_nodes, w=w, maxT_pen=maxT_pen, tw_pen=tw_pen,
-                                       seed=seed, verbose=verbose, adaptive=adaptive))
+                self.envs.append(EnvRL(n_nodes=n_nodes, seed=seed, verbose=verbose, adaptive=adaptive))
             self.n_envs = n_envs
+            self.n_nodes = n_nodes
         # print(f'Created {self.n_envs} environments.')
 
     def reset(self):
@@ -40,8 +50,13 @@ class BatchEnvRL:
     def get_features(self):
         x = np.zeros((self.n_envs, self.n_nodes, 3))
         idx = 0
+        print(x.shape)
         for env in self.envs:
-            x[idx] = np.concatenate((self._normalize_features(env.x[:, 1:3]), env.x[:, -2, None]), axis=-1)
+            x_ = np.concatenate((self._normalize_features(env.x[:, 1:3]), env.x[:, -2, None]), axis=-1)
+            n_ = len(x_)
+            z_ = np.zeros((self.n_nodes-n_, 3))
+            x_ = np.concatenate((x_, z_), axis=0)
+            x[idx] = x_
             idx += 1
         return x
 
@@ -79,3 +94,11 @@ class BatchEnvRL:
                 _, rwds[idx], pens[idx], _ = env.check_solution(sols[idx])
                 idx += 1
             return rwds, pens
+
+if __name__ == '__main__':
+    import os
+    base_dir = os.path.dirname(os.getcwd())
+    x_dir = os.path.join(base_dir, 'data', 'valid', 'instances')
+    adj_dir = os.path.join(base_dir, 'data', 'valid', 'adjs')
+    batch_env = BatchEnvRL(n_envs=2, from_file=True, x_dir=x_dir, adj_dir=adj_dir)
+

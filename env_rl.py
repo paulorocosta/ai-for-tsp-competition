@@ -125,8 +125,9 @@ class EnvRL(env.Env):
         assert node <= self.n_nodes, f'node {node} does not exist for instance of size {self.n_nodes}'
 
         previous_tour_time = self.tour_time
-        self.tour_time += self.adj[self.current_node - 1, node - 1]
-        self.tour_time = np.round(np.random.randint(1, 101, size=1)[0] / 100 * self.tour_time, 2)
+        time = self.adj[self.current_node - 1, node - 1]
+        noise = np.random.randint(1, 101, size=1)[0] / 100
+        self.tour_time += np.round(noise * time, 2)
         self._get_rewards(node)
         self.time_t = self.tour_time - previous_tour_time
         self.current_node = node
@@ -152,13 +153,12 @@ class EnvRL(env.Env):
         self.sim_counter += 1
         self.name = f'tour{self.sim_counter:03}'
         if self.verbose:
-            print(f'[*] Starting a new simulation with noisy travel times-{self.name}')
+            print(f'[*] Starting a new simulation: {self.name}')
 
 
 if __name__ == '__main__':
-    from env_rl import EnvRL
 
-    env = EnvRL(5, seed=123456, adaptive=False)
+    env = EnvRL(5, seed=12345)
     print('name', env.name)
     env.step(2)
     env.step(4)

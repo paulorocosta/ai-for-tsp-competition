@@ -1,7 +1,6 @@
 import json
 import numpy as np
 import os
-import pprint
 from env_rl import EnvRL
 from pathlib import Path
 
@@ -13,7 +12,6 @@ def score_rl_solution(submission_filepath='example_output_rl.json', final_submis
 
     f = open(submission_filepath)
     submission = json.load(f)
-    #pprint.pprint(submission)
 
     scores = []
     n_feas_sols = 0
@@ -26,7 +24,7 @@ def score_rl_solution(submission_filepath='example_output_rl.json', final_submis
         instance = submission[instance_name]
         if final_submission:
             n_tours = len(instance['tours'].keys())
-            assert n_tours == 100, f'each instance must have 100 tours, found {n_tours}'
+            assert n_tours == 100, f'each instance must have 100 tours, but found {n_tours} in {instance_name}'
         for tour_name in instance['tours'].keys():
             sol = instance['tours'][tour_name]
             for node in sol[1:]:
@@ -34,8 +32,7 @@ def score_rl_solution(submission_filepath='example_output_rl.json', final_submis
             rewards = env.get_collected_rewards()
             pen = env.get_incurred_penalties()
             feas = env.get_feasibility()
-
-            assert tour_name == env.get_sim_name(), f'submission tour name {tour_name} is in the wrong simulation order.'
+            assert tour_name == env.get_sim_name(), f'submission {tour_name} in {instance_name} is in the wrong order.'
             score = rewards + pen
             n_feas_sols += float(feas)
             scores.append(score)
