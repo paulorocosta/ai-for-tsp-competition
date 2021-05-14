@@ -50,7 +50,6 @@ class BatchEnvRL:
     def get_features(self):
         x = np.zeros((self.n_envs, self.n_nodes, 3))
         idx = 0
-        print(x.shape)
         for env in self.envs:
             x_ = np.concatenate((self._normalize_features(env.x[:, 1:3]), env.x[:, -2, None]), axis=-1)
             n_ = len(x_)
