@@ -1,6 +1,6 @@
 # Updates
 * 14.05
-    - We have updated the ``batch_env_rl.py`` to read from files appropriately. 
+    - We have updated ``batch_env_rl.py`` to read from files appropriately. 
     - We have fixed a bug in the noisy travel times introduced in the last update. 
 
 * 11.05
