@@ -68,7 +68,8 @@ def check_surrogate_solution(x):
         Corresponding objective.
 
     '''
-    env = Env(50, seed=12345)  # Instance used for verifying the solution.
+    n_nodes = 55
+    env = Env(n_nodes, seed=3119615)
     obj = objective(x, env)
     print('Solution quality (higher is better): ', obj)
     return obj
@@ -132,9 +133,12 @@ if __name__ == '__main__':
         # print('Feasible: ', feas)
         print('Objective: ', rewards + pen)
 
-    n_nodes = 50
-    env = Env(n_nodes, seed=12345)  # Generate instance with n_nodes nodes
-    print('Larger instance (n=50). Compute the average over evaluating the same solution multiple times...')
+
+    ##Validation
+    n_nodes = 55
+    env = Env(n_nodes, seed=3119615) # Generate instance with n_nodes nodes
+
+    print('Larger instance (n=55). Compute the average over evaluating the same solution multiple times...')
     # sol = [1, 4, 3, 2, 5, 1]
     sol = np.arange(1, n_nodes + 1)
     np.random.shuffle(sol)
