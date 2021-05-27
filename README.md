@@ -26,7 +26,7 @@ Cash prizes will be announced soon!
 
 For more details about the competition, please refer to [this document](https://tspcompetition.com/TSP_Competition.pdf).
 
-## Official Repository
+## Official Documentation
 
-Check out our [Github repository.](https://github.com/paulorocosta/ai-for-tsp-competition)
+Check out our [Documentation](https://paulorocosta.gitbook.io/ai4tsp-competition/)
 
