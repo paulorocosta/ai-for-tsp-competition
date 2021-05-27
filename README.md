@@ -1,7 +1,3 @@
----
-description: This is the documentation of the AI4TSP Competition - IJCAI 2021
----
-
 # AI for TSP Competition
 
 ## Goal
