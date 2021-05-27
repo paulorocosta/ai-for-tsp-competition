@@ -37,7 +37,7 @@ Check out our [Announcements](https://paulorocosta.gitbook.io/ai4tsp-competition
 
 ## FAQ
 
-Check our our [FAQ](https://paulorocosta.gitbook.io/ai4tsp-competition/faq)
+Check out our [FAQ](https://paulorocosta.gitbook.io/ai4tsp-competition/faq)
 
 ## Acknowledgments 
 
