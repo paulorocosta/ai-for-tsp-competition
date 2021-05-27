@@ -15,7 +15,7 @@ Cash prizes will be announced soon!
 
 ## Timeline
 
-* May 7: Start of test period
+* May 7: Start of the tryout period
 * ~~May 21: Competition start~~
 * July 5: Submission deadline \(validation\)
 * July 12: Submission deadline \(test\)
