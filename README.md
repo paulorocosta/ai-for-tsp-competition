@@ -43,6 +43,18 @@ Check out our [FAQ](https://paulorocosta.gitbook.io/ai4tsp-competition/faq)
 
 Check out our [Slack Channel](https://join.slack.com/t/aifortspcompe-8vg8608/shared_invite/zt-pzzgb9aa-92uS1~OBVog9uY8AFEfHhg)
 
+## Dependencies
+
+* Python=3.8 (should be OK with v >= 3.6)
+* PyTorch=1.8 (track 2 only)
+* Numpy=1.20
+* bayesian-optimization=1.1.0 (track 1 only)
+* Pandas=1.2.4
+* Conda=4.8.4 (optional)
+
+Please check ``environment.yml``
+
+
 ## Acknowledgments 
 
 Special thanks to https://github.com/pemami4911/neural-combinatorial-rl-pytorch for the implemetation of Neural CO used as part of this repository. 
