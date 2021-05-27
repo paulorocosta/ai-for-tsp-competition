@@ -39,4 +39,6 @@ Check out our [Announcements](https://paulorocosta.gitbook.io/ai4tsp-competition
 
 Check our our [FAQ](https://paulorocosta.gitbook.io/ai4tsp-competition/faq)
 
+## Acknowledgments 
 
+Special thanks to https://github.com/pemami4911/neural-combinatorial-rl-pytorch for the implemetation of Neural CO used as part of this repository. 
