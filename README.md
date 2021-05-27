@@ -30,3 +30,13 @@ For more details about the competition, please refer to [this document](https://
 
 Check out our [Documentation](https://paulorocosta.gitbook.io/ai4tsp-competition/)
 
+
+## Announcements
+
+Check out our [Announcements](https://paulorocosta.gitbook.io/ai4tsp-competition/announcements)
+
+## FAQ
+
+Check our our [FAQ](https://paulorocosta.gitbook.io/ai4tsp-competition/faq)
+
+
