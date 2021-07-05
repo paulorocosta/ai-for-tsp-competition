@@ -3,7 +3,7 @@ from baseline_surrogate.demo_surrogate import check_surrogate_solution
 if __name__ == '__main__':
     '''
     check_surrogate_solution checks the quality of a solution for an
-    instance with 55 nodes. It requires a solution of the form
+    instance with 65 nodes. It requires a solution of the form
     [1, x1, x2, ..., x_n].
     The integers from 1 to n have to appear
     in the part [x1,..., x_n], so the number
@@ -12,21 +12,15 @@ if __name__ == '__main__':
 
 
 
-
     print('Check the quality of a bad solution...')
-    solution = [1, 53, 14, 2, 41, 15, 36, 28, 44, 20, 11, 6, 46, 17, 55, 9, 32, 3, 8, 54, 27, 51, 52, 34, 49, 25, 1,
-                31, 5, 37, 16, 43, 30, 29, 7, 12, 40, 22, 38, 21, 24, 35, 10, 39, 47, 26, 50, 13, 33, 19, 4, 23, 18,
-                45, 42, 48]
+    solution = [1, 65, 14, 57, 6, 50, 25, 29, 5, 7, 53, 35, 2, 51, 36, 28, 26, 1, 64, 44, 4, 49, 45, 48, 3, 21, 55, 9, 61, 33, 15, 34, 58, 63, 47, 60, 40, 59, 8, 43, 12, 46, 31, 10, 37, 24, 19, 17, 20, 52, 62, 42, 54, 32, 18, 38, 30, 56, 13, 16, 23, 11, 41, 39, 27, 22]
     check_surrogate_solution(solution)
 
     print('Check the quality of a better solution...')
-    solution = [1, 41, 9, 48, 52, 33, 50, 38, 12, 39, 11, 18, 13, 53, 5, 36, 6, 15, 17, 4, 2, 25, 1, 28, 26, 3, 23, 27,
-                22, 55, 49, 54, 46, 16, 51, 21, 45, 44, 14, 24, 10, 34, 47, 31, 40, 19, 20, 8, 43, 30, 42, 32, 35, 37,
-                29, 7]
+    solution = [1, 1, 2, 3, 4, 5, 65, 13, 36, 46, 48, 16, 56, 31, 6, 26, 64, 63, 21, 62, 7, 61, 8, 60, 11, 9, 10, 59, 12, 30, 32, 14, 58, 15, 17, 57, 55, 18, 19, 20, 54, 53, 22, 23, 52, 24, 51, 25, 27, 28, 50, 49, 29, 33, 47, 45, 44, 34, 35, 43, 42, 37, 38, 41, 40, 39]
     check_surrogate_solution(solution)
 
     print('Check the quality of an even better solution...')
-    solution = [1, 11, 1, 41, 48, 52, 50, 33, 38, 12, 39, 18, 13, 53, 5, 36, 6, 15, 17, 4, 2, 25, 9, 28, 26, 3, 23, 27,
-                22, 55, 49, 54, 46, 16, 51, 21, 45, 44, 14, 24, 10, 34, 47, 31, 40, 19, 20, 8, 43, 30, 42, 32, 35, 37,
-                29, 7]
+    solution = [1, 6, 1, 32, 28, 46, 59, 55, 42, 39, 18, 64, 40, 41, 51, 58, 35, 7, 23, 45, 2, 63, 4, 57, 37, 11, 27, 31, 9, 56, 61, 50, 3, 8, 12, 60, 53, 33, 13, 36, 47, 15, 29, 19, 5, 22, 48, 26, 44, 25, 62, 16, 17, 21, 65, 38, 49, 14, 34, 20, 54, 43, 52, 24, 10, 30]
     check_surrogate_solution(solution)
+
