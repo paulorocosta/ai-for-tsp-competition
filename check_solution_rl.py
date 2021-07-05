@@ -7,8 +7,8 @@ from pathlib import Path
 
 def score_rl_solution(submission_filepath='example_output_rl.json', final_submission=False):
     base_path = Path(__file__).parent.absolute()
-    test_data_instance_path = base_path.joinpath('data/valid/instances')
-    test_data_adj_path = base_path.joinpath('data/valid/adjs')
+    test_data_instance_path = base_path.joinpath('data/test/instances')
+    test_data_adj_path = base_path.joinpath('data/test/adjs')
 
     f = open(submission_filepath)
     submission = json.load(f)

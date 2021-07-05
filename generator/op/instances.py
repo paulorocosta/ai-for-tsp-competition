@@ -17,7 +17,7 @@ class InstanceGenerator:
     base_dir = path.dirname(path.dirname(path.dirname(path.abspath(__file__))))
 
     def __init__(self, n_instances, n_nodes, w=(20, 40, 60, 80, 100), ylim=(0, 50), xlim=(0, 200), prize='distance',
-                 seed=None, data_dir='data/valid', offset=0):
+                 seed=None, data_dir='data/test', offset=0):
         # seed the generation process
         self.seed = seed
         np.random.seed(seed=seed)
