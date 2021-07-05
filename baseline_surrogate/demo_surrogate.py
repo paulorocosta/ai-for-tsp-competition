@@ -13,7 +13,7 @@ except:
 
 def objective(x, env):
     '''
-    
+
 
     Parameters
     ----------
@@ -52,7 +52,7 @@ def objective(x, env):
 
 def check_surrogate_solution(x):
     '''
-    
+
 
     Parameters
     ----------
@@ -68,77 +68,20 @@ def check_surrogate_solution(x):
         Corresponding objective.
 
     '''
-    n_nodes = 55
-    env = Env(n_nodes, seed=3119615)
+    n_nodes = 65
+    env = Env(n_nodes, seed=6537855)  # Generate instance with n_nodes nodes
     obj = objective(x, env)
     print('Solution quality (higher is better): ', obj)
     return obj
 
 
 if __name__ == '__main__':
-    # env = Env(x_path='tsptw_feat/tw-n5w50.001.txt', adj_path='tsptw_dm/adj-n5w50.001.txt')
-    # env = Env(x_path="tsptw_feat/optw-n5w20-distance.001.txt", adj_path=None)
 
-    env = Env(5, seed=12345)  # Generate instance with 5 nodes
+    ##Test phase
+    n_nodes = 65
+    env = Env(n_nodes, seed=6537855)  # Generate instance with n_nodes nodes
 
-    # Try some solutions as a test
-    print('Try some solutions as a test...')
-    sol = [1, 2, 3, 1, 4, 5]
-    print('Solution: ', sol)
-    obj_cost, rewards, pen, feas = env.check_solution(sol)
-    print('Time: ', obj_cost)
-    print('Rewards: ', rewards)
-    print('Penalty: ', pen)
-    print('Feasible: ', feas)
-    print('Objective: ',
-          rewards + pen)  # The objective function used by the surrogate model. Note that this is not what is used to evaluate the best participant, for that we use the solution with the highest reward that is still feasible.
-    # print(objective(sol,env)) #False
-
-    sol2 = [1, 3, 5, 1, 2, 4]
-    print('Solution: ', sol2)
-    obj_cost, rewards, pen, feas = env.check_solution(sol2)
-    print('Time: ', obj_cost)
-    print('Rewards: ', rewards)
-    print('Penalty: ', pen)
-    print('Feasible: ', feas)
-    print('Objective: ', rewards + pen)
-
-    sol3 = [1, 5, 1, 3, 4, 2]
-    print('Solution: ', sol3)
-    obj_cost, rewards, pen, feas = env.check_solution(sol3)
-    print('Time: ', obj_cost)
-    print('Rewards: ', rewards)
-    print('Penalty: ', pen)
-    print('Feasible: ', feas)
-    print('Objective: ', rewards + pen)
-
-    sol4 = [1, 4, 5, 2, 3, 1]
-    print('Solution: ', sol4)
-    obj_cost, rewards, pen, feas = env.check_solution(sol4)
-    print('Time: ', obj_cost)
-    print('Rewards: ', rewards)
-    print('Penalty: ', pen)
-    print('Feasible: ', feas)
-    print('Objective: ', rewards + pen)
-
-    # Try the same solution multiple times to see if it produces different results
-    print('Try the same solution multiple times to see if it produces different results...')
-    sol = [1, 4, 3, 2, 5, 1]
-    print('Solution: ', sol)
-    for _ in range(10):
-        obj_cost, rewards, pen, feas = env.check_solution(sol)
-        # print('Time: ', obj_cost)
-        # print('Rewards: ', rewards)
-        # print('Penalty: ', pen)
-        # print('Feasible: ', feas)
-        print('Objective: ', rewards + pen)
-
-
-    ##Validation
-    n_nodes = 55
-    env = Env(n_nodes, seed=3119615) # Generate instance with n_nodes nodes
-
-    print('Larger instance (n=55). Compute the average over evaluating the same solution multiple times...')
+    print('Generated instance (n=65). Compute the average over evaluating the same solution multiple times...')
     # sol = [1, 4, 3, 2, 5, 1]
     sol = np.arange(1, n_nodes + 1)
     np.random.shuffle(sol)
