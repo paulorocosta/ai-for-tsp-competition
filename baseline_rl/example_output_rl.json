@@ -1,7 +1,7 @@
 {
   "instance0001": {
     "nodes": 5,
-    "seed": 12345,
+    "seed": 19120623,
     "tours": {
       "tour001": [
         1,
@@ -23,7 +23,7 @@
   },
   "instance0002": {
     "nodes": 4,
-    "seed": 12345,
+    "seed": 19120623,
     "tours": {
       "tour001": [
         1,
