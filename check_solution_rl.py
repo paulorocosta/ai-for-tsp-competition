@@ -12,13 +12,14 @@ def score_rl_solution(submission_filepath='example_output_rl.json', final_submis
 
     f = open(submission_filepath)
     submission = json.load(f)
-
+    final_submission_seed = 19120623
     scores = []
     n_feas_sols = 0
     for instance_name in submission.keys():
         x_path = os.path.join(test_data_instance_path, instance_name + '.csv')
         adj_path = os.path.join(test_data_adj_path, 'adj-' + instance_name + '.csv')
         seed = submission[instance_name]['seed']
+        assert seed == final_submission_seed, f'wrong seed, expected: {final_submission_seed} but found {seed}.'
         env = EnvRL(from_file=True, seed=seed, x_path=x_path, adj_path=adj_path)
 
         instance = submission[instance_name]

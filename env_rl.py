@@ -158,7 +158,7 @@ class EnvRL(env.Env):
 
 if __name__ == '__main__':
 
-    env = EnvRL(5, seed=12345)
+    env = EnvRL(5, seed=19120623)
     print('name', env.name)
     env.step(2)
     env.step(4)
